@@ -13,12 +13,33 @@ be performed on these types)
 
 // var classButton = document.getElementsByClassName("drum");
 
+/*
+
 var classButton = document.querySelectorAll(".drum");
 
 var clickButton = function() {
-    alert("I got clicked!");
+
+  alert("I got clicked!");
+
 };
 
 for (var i = 0; i < classButton.length; i++) {
     classButton[i].addEventListener('click', clickButton, false);
+}
+
+*/
+
+var classButton = document.querySelectorAll(".drum");
+
+var drumSound = function() {
+
+audio = new Audio('./sounds/tom-1.mp3');
+audio.play();
+console.log(this);
+this.style.color = "blue";
+
+};
+
+for (var i = 0; i < classButton.length; i++) {
+    classButton[i].addEventListener('click', drumSound, false);
 }
